@@ -1353,7 +1353,7 @@
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
     /* Hero */
-    .hero { min-height: 100svh; padding: 2rem 1.5rem 4.5rem; justify-content: flex-end; align-items: center; }
+    .hero { min-height: 100svh; padding: 2rem 1.5rem 2rem; justify-content: center; align-items: center; }
     .hero-ornament { display: none !important; }
     .hero-names { font-size: clamp(3rem, 15vw, 5.5rem) !important; line-height: 0.92 !important; }
     .hero-names .amp { font-size: 0.62em !important; }
@@ -1412,7 +1412,8 @@
     /* Dresscode */
     .dresscode-section { padding: 4rem 1.5rem; }
     .dress-icons { gap: 1.2rem; }
-    .dresscode-note { font-size: 0.88rem; }
+    .dresscode-note { font-size: 1rem; }
+    .dresscode-note strong { font-size: 0.85rem; letter-spacing: 0.12em; }
 
     /* RSVP */
     .rsvp-section { padding: 4rem 1.5rem; }
@@ -1960,11 +1961,12 @@
   setInterval(updateCountdown, 1000);
 
 
-  // Pause slider animation on mobile
+  // Slider on mobile: keep animation running but enable touch scroll
   (function() {
-    if (window.innerWidth <= 768) {
-      var t = document.getElementById('sliderTrack');
-      if (t) t.style.animation = 'none';
+    var wrap = document.getElementById('sliderWrap');
+    if (wrap && window.innerWidth <= 768) {
+      wrap.style.overflowX = 'auto';
+      wrap.style.scrollbarWidth = 'none';
     }
   })();
 
