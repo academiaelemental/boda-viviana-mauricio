@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viviana & Mauricio — Boda</title>
+<title>Viviana & Mauricio — Boda 💍</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -371,9 +372,7 @@
     transform: translateX(-50%);
   }
 
-  @media (max-width: 768px) {
-
-  }
+  
 
   .timeline-item {
     display: grid;
@@ -646,16 +645,7 @@
     transform: none;
   }
 
-  @media (max-width: 600px) {
-    .timeline::before { left: 1.5rem; }
-    .timeline-item { grid-template-columns: 2rem 1fr; }
-    .timeline-item:nth-child(odd) .tl-content,
-    .timeline-item:nth-child(even) .tl-content { text-align: left; grid-column: 2; }
-    .timeline-item:nth-child(even) .tl-dot { grid-column: 1; }
-    .timeline-item:nth-child(even) .tl-empty { display: none; }
-    .timeline-item:nth-child(odd) .tl-dot { grid-column: 1; }
-    .tl-empty { display: none; }
-  }
+  
 
   /* ─── PHOTO SLIDER ─── */
   .slider-section {
@@ -1278,140 +1268,17 @@
   /* ════════════════════════════════
      MOBILE RESPONSIVE — max 768px
   ════════════════════════════════ */
-  @media (max-width: 768px) {
-
-    /* ── General ── */
-    body { font-size: 15px; }
-
-    /* ── Hero ── */
-    .hero { padding: 3rem 1.5rem 4rem; min-height: 100svh; }
-    .hero-names { font-size: clamp(3.5rem, 18vw, 6rem); line-height: 0.9; }
-    .hero-ornament { display: none; }
-    .hero-scroll { bottom: 1.5rem; }
-
-    /* ── Welcome ── */
-    .welcome { padding: 5rem 1.5rem; }
-    .welcome-text { font-size: clamp(1.2rem, 5vw, 1.5rem); }
-    .welcome::before { height: 50px; }
-
-    /* ── Slider ── */
-    .slider-section { padding-bottom: 3rem; }
-    .slide { width: 180px; height: 130px; }
-    .slider-arrow { width: 34px; height: 34px; font-size: 0.85rem; }
-
-    /* ── Historia ── */
-    .historia-section { padding: 5rem 1.5rem 4rem; }
-    .historia-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-    .historia-text { font-size: clamp(0.95rem, 3.5vw, 1.1rem); padding-left: 1rem; }
-
-    /* ── Info cards ── */
-    .info-section { padding: 4rem 1rem; }
-    .info-grid {
-      grid-template-columns: 1fr 1fr !important;
-      gap: 1px;
-      max-width: 100% !important;
-    }
-    .info-card { padding: 2rem 1.2rem; }
-    .info-card .card-title { font-size: 1.2rem; }
-    .info-card .card-body { font-size: 0.72rem; }
-    .venue-hint { font-size: 0.5rem !important; }
-
-
-    .timeline-section h2 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
-
-    /* ── Dresscode ── */
-    .dresscode-section { padding: 5rem 1.5rem; }
-    .dresscode-section h2 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-    .dress-icons { gap: 2rem; }
-    .dresscode-note { font-size: 0.95rem; }
-    .dresscode-section::after { font-size: 3rem; }
-
-    /* ── RSVP ── */
-    .rsvp-section { padding: 5rem 1.5rem; }
-    .rsvp-section h2 { font-size: clamp(1.8rem, 7vw, 2.8rem); }
-    .rsvp-form { max-width: 100%; }
-    .rsvp-form input,
-    .rsvp-form select { font-size: 0.9rem; padding: 0.85rem 1rem; }
-
-    /* ── Regalos ── */
-    .regalo-section > div > div { padding: 4rem 1.5rem 5rem !important; }
-
-    /* ── Countdown ── */
-    .countdown-section { padding: 5rem 1rem; }
-    .countdown-grid { gap: 0.8rem; }
-    .countdown-num { font-size: clamp(2.5rem, 10vw, 4rem); }
-    .countdown-sep { font-size: clamp(2rem, 7vw, 3rem); }
-    .countdown-label { font-size: 0.5rem; }
-    .cal-btn { font-size: 0.55rem; padding: 0.65rem 1.2rem; }
-
-    /* ── Footer ── */
-    footer { padding: 4rem 1.5rem; }
-    .footer-names { font-size: clamp(2rem, 10vw, 3.5rem); }
-
-
-
-    /* ── Modal ── */
-    .modal-box { width: 96%; }
-
-    /* ── Cursor: hide custom cursor on touch devices ── */
-    .cursor-dot, .cursor-ring { display: none !important; }
-
-    /* ── Section eyebrows ── */
-    .section-eyebrow { font-size: 0.58rem; }
-
-    /* ── Ornament divider ── */
-    .ornament-divider .line { max-width: 60px; }
-  }
+  
 
   /* Extra small phones */
-  @media (max-width: 400px) {
-    .hero-names { font-size: clamp(3rem, 18vw, 5rem); }
-    .info-grid { grid-template-columns: 1fr !important; }
-    .countdown-grid { gap: 0.5rem; }
-    .countdown-sep { display: none; }
-    .slide { width: 150px; height: 110px; }
-  }
+  
 
 
-  @media (max-width: 768px) {
-    /* Ensure hero slides show on mobile */
-    .hero-slide {
-      background-attachment: scroll !important;
-    }
-    /* Ensure all hero text is above overlay */
-    .hero-tag, .hero-names, .hero-date-line, .hero-date, .hero-scroll {
-      position: relative;
-      z-index: 3 !important;
-    }
-    /* Fix welcome text visibility */
-    .welcome-text, .welcome-sub {
-      color: var(--burgundy-dark) !important;
-    }
-    /* Fix historia text */
-    .historia-text {
-      color: var(--charcoal) !important;
-    }
-    /* Fix timeline text on black bg */
-    .tl-content .tl-name {
-      color: var(--cream) !important;
-    }
-    .tl-content .tl-desc {
-      color: rgba(245,239,228,0.55) !important;
-    }
-    /* Fix info card text */
-    .info-card .card-title { color: var(--cream) !important; }
-    .info-card .card-body  { color: rgba(245,239,228,0.55) !important; }
-  }
+  
 
 
-  /* ── Mobile: disable reveal animation, show everything ── */
-  @media (max-width: 768px) {
-    .reveal {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-  }
+  
+  
 
 
   /* ─── MUSIC PLAYER ─── */
@@ -1459,76 +1326,127 @@
   }
 
 
-  @media (max-width: 768px) {
-    .timeline {
-      max-width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .timeline::before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .timeline-item {
-      display: grid !important;
-      grid-template-columns: 1fr 12px 1fr !important;
-      gap: 0 0.75rem !important;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-    /* Odd items: text left, dot center, empty right */
-    .timeline-item:nth-child(odd) .tl-content {
-      grid-column: 1 !important;
-      grid-row: 1 !important;
-      text-align: right !important;
-    }
-    .timeline-item:nth-child(odd) .tl-dot {
-      grid-column: 2 !important;
-      grid-row: 1 !important;
-    }
-    .timeline-item:nth-child(odd) .tl-empty {
-      grid-column: 3 !important;
-      grid-row: 1 !important;
-      display: block !important;
-    }
-    /* Even items: empty left, dot center, text right */
-    .timeline-item:nth-child(even) .tl-empty {
-      grid-column: 1 !important;
-      grid-row: 1 !important;
-      display: block !important;
-    }
-    .timeline-item:nth-child(even) .tl-dot {
-      grid-column: 2 !important;
-      grid-row: 1 !important;
-    }
-    .timeline-item:nth-child(even) .tl-content {
-      grid-column: 3 !important;
-      grid-row: 1 !important;
-      text-align: left !important;
-    }
-    .tl-content .tl-time { font-size: 0.55rem; letter-spacing: 0.2em; }
-    .tl-content .tl-name { font-size: 0.95rem; }
-    .tl-content .tl-desc { font-size: 0.68rem; }
+  
+
+
+  
+
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE — Single file, all devices
+  ══════════════════════════════════════════ */
+
+  /* ── Tablet (max 1024px) ── */
+  @media (max-width: 1024px) {
+    .info-grid { grid-template-columns: 1fr 1fr !important; max-width: 600px !important; }
+    .timeline { max-width: 500px; }
   }
 
-
+  /* ── Mobile (max 768px) ── */
   @media (max-width: 768px) {
-    .slider-arrow {
-      opacity: 1 !important;
-      width: 34px;
-      height: 34px;
-    }
+
+    /* Cursor off */
+    .cursor-dot, .cursor-ring { display: none !important; }
+    * { cursor: auto !important; }
+
+    /* Reveal: always visible */
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+    /* Hero */
+    .hero { min-height: 100svh; padding: 2rem 1.5rem 4.5rem; justify-content: flex-end; align-items: center; }
+    .hero-ornament { display: none !important; }
+    .hero-names { font-size: clamp(3rem, 15vw, 5.5rem) !important; line-height: 0.92 !important; }
+    .hero-names .amp { font-size: 0.62em !important; }
+    .hero-tag { font-size: 0.6rem; margin-bottom: 1.2rem; }
+    .hero-date { font-size: 0.68rem; letter-spacing: 0.18em; }
+    .hero-date-line { margin: 1.5rem auto; }
+    .hero-scroll { display: none; }
+
+    /* Welcome */
+    .welcome { padding: 4rem 1.5rem 3.5rem; }
+    .welcome::before { height: 50px; }
+    .welcome-text { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+    .welcome-sub { font-size: 0.82rem; }
+
+    /* Slider */
     .slider-track-wrap {
-      overflow-x: auto;
+      overflow-x: auto !important;
       -webkit-overflow-scrolling: touch;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
-      -ms-overflow-style: none;
     }
     .slider-track-wrap::-webkit-scrollbar { display: none; }
-    .slide {
-      scroll-snap-align: start;
-    }
+    .slide { width: 200px !important; height: 145px !important; scroll-snap-align: start; }
+    .slider-arrow { opacity: 1 !important; width: 32px !important; height: 32px !important; }
+
+    /* Historia */
+    .historia-section { padding: 4rem 1.5rem; }
+    .historia-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .historia-text { font-size: 0.92rem; padding-left: 0.9rem; }
+
+    /* Info cards */
+    .info-section { padding: 3rem 1rem; }
+    .info-grid { grid-template-columns: 1fr 1fr !important; max-width: 100% !important; }
+    .info-card { padding: 1.6rem 0.9rem; }
+    .info-card .card-title { font-size: 1rem; }
+    .info-card .card-body { font-size: 0.68rem; }
+    .venue-hint { flex-direction: column !important; gap: 0.3rem; }
+    .venue-hint span { font-size: 0.48rem !important; }
+
+    /* Timeline */
+    .timeline-section { padding: 4rem 1rem; }
+    .timeline-section h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+    .timeline { max-width: 320px; margin: 2rem auto 0; }
+    .timeline::before { left: 50%; transform: translateX(-50%); }
+    .timeline-item { display: grid !important; grid-template-columns: 1fr 12px 1fr !important; gap: 0 0.6rem !important; margin-bottom: 1.8rem; }
+    .timeline-item:nth-child(odd) .tl-content  { grid-column:1!important; grid-row:1!important; text-align:right!important; }
+    .timeline-item:nth-child(odd) .tl-dot      { grid-column:2!important; grid-row:1!important; }
+    .timeline-item:nth-child(odd) .tl-empty    { grid-column:3!important; grid-row:1!important; display:block!important; }
+    .timeline-item:nth-child(even) .tl-empty   { grid-column:1!important; grid-row:1!important; display:block!important; }
+    .timeline-item:nth-child(even) .tl-dot     { grid-column:2!important; grid-row:1!important; }
+    .timeline-item:nth-child(even) .tl-content { grid-column:3!important; grid-row:1!important; text-align:left!important; }
+    .tl-content .tl-time { font-size: 0.5rem; }
+    .tl-content .tl-name { font-size: 0.88rem; }
+    .tl-content .tl-desc { font-size: 0.65rem; }
+
+    /* Dresscode */
+    .dresscode-section { padding: 4rem 1.5rem; }
+    .dress-icons { gap: 1.2rem; }
+    .dresscode-note { font-size: 0.88rem; }
+
+    /* RSVP */
+    .rsvp-section { padding: 4rem 1.5rem; }
+    .rsvp-section h2 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+    .rsvp-form { max-width: 100%; }
+    .rsvp-form input, .rsvp-form select { font-size: 16px !important; }
+
+    /* Countdown */
+    .countdown-section { padding: 4rem 1rem; }
+    .countdown-grid { gap: 0.5rem; }
+    .countdown-num { font-size: clamp(2.5rem, 11vw, 4rem) !important; }
+    .countdown-sep { font-size: clamp(1.8rem, 7vw, 3rem); }
+    .countdown-label { font-size: 0.45rem; }
+    .cal-btn { font-size: 0.52rem !important; padding: 0.6rem 1rem !important; margin-top: 1.5rem; }
+
+    /* Footer */
+    footer { padding: 3.5rem 1.5rem; }
+    .footer-names { font-size: clamp(2rem, 10vw, 3.5rem); }
+    .footer-date { font-size: 0.52rem; }
+
+    /* Music player */
+    .music-player { bottom: 1rem !important; right: 1rem !important; top: auto !important; max-width: 185px !important; }
+    .music-btn { width: 28px !important; height: 28px !important; }
+
+    /* Modal */
+    .modal-box { width: 95% !important; }
+  }
+
+  /* ── Small phones (max 400px) ── */
+  @media (max-width: 400px) {
+    .hero-names { font-size: clamp(2.6rem, 14vw, 4.5rem) !important; }
+    .info-grid { grid-template-columns: 1fr !important; }
+    .countdown-sep { display: none; }
+    .countdown-grid { gap: 1rem; }
   }
 
 </style>
@@ -2041,6 +1959,14 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+
+  // Pause slider animation on mobile
+  (function() {
+    if (window.innerWidth <= 768) {
+      var t = document.getElementById('sliderTrack');
+      if (t) t.style.animation = 'none';
+    }
+  })();
 
   // Hero slideshow
   (function() {
