@@ -1894,45 +1894,34 @@
   function submitRSVP(e) {
     e.preventDefault();
 
-    var form    = document.getElementById('rsvpForm');
-    var btn     = form.querySelector('.rsvp-btn');
-    var thanks  = document.getElementById('rsvp-thanks');
-    var deadline = document.querySelector('.rsvp-deadline');
-
-    // Validate nombre
     var nombre = document.getElementById('rsvp-nombre').value.trim();
     if (!nombre) { alert('Por favor ingresa tu nombre.'); return; }
 
     var data = {
-      nombre:    nombre,
-      whatsapp:  document.getElementById('rsvp-whatsapp').value.trim(),
+      nombre:     nombre,
+      whatsapp:   document.getElementById('rsvp-whatsapp').value.trim(),
       afterparty: document.getElementById('rsvp-afterparty').value,
-      notas:     document.getElementById('rsvp-notas').value.trim()
+      notas:      document.getElementById('rsvp-notas').value.trim()
     };
 
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
+    // Show confirmation immediately — don't wait for network
+    var form    = document.getElementById('rsvpForm');
+    var thanks  = document.getElementById('rsvp-thanks');
+    var deadline = document.querySelector('.rsvp-deadline');
+    form.style.display = 'none';
+    if (deadline) deadline.style.display = 'none';
+    thanks.style.cssText = 'display:block !important; opacity:1 !important; margin-top:2rem;';
 
-    // Use XMLHttpRequest for better compatibility
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwjOptoMa5baPgFFqBO7LczxKyCs1WXgog6C0ujSprA2M0YvtNT-oabCm69Hjs1u3kX/exec', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    function showThanks() {
-      form.style.display = 'none';
-      if (deadline) deadline.style.display = 'none';
-      thanks.style.cssText = 'display:block !important; opacity:1 !important; margin-top:2rem;';
-    }
-
-    xhr.onload = function() { showThanks(); };
-    xhr.onerror = function() { showThanks(); }; // show anyway
-    xhr.ontimeout = function() { showThanks(); };
-    xhr.timeout = 8000;
-
+    // Send data in background (fire and forget)
     try {
-      xhr.send(JSON.stringify(data));
+      fetch('https://script.google.com/macros/s/AKfycbwjOptoMa5baPgFFqBO7LczxKyCs1WXgog6C0ujSprA2M0YvtNT-oabCm69Hjs1u3kX/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     } catch(err) {
-      showThanks();
+      console.log('Send error (data may still arrive):', err);
     }
   }
 
