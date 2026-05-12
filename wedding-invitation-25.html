@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1654,7 +1653,7 @@
     <div class="timeline-item">
       <div class="tl-content">
         <span class="tl-time">6:30 PM</span>
-        <span class="tl-name">Recepción 🥂</span>
+        <span class="tl-name">Cóctel de bienvenida 🥂</span>
         <span class="tl-desc">Piscina</span>
       </div>
       <div class="tl-dot"></div>
@@ -1666,7 +1665,7 @@
       <div class="tl-dot"></div>
       <div class="tl-content">
         <span class="tl-time">8:00 PM</span>
-        <span class="tl-name">Cena & Fiesta 🍽️</span>
+        <span class="tl-name">Recepción 🍽️</span>
         <span class="tl-desc">Salón principal</span>
       </div>
     </div>
@@ -1754,7 +1753,7 @@
     No uses tacones muy altos o de puntilla, recuerda que es en un jardín.<br>
     Prohibido: blanco, champagne, perla o nude claro (no compitan con la novia).</p>
     <p style="margin-bottom:1.2rem;text-align:center;"><strong style="font-style:normal;font-size:0.85em;color:var(--gold-light);letter-spacing:0.1em;">HOMBRES</strong><br>
-    Pantalón de vestir con camisa, con o sin saco. Sin corbata.</p>
+    Pantalón de vestir con camisa, con o sin saco.<br>Sin corbata.</p>
     <p style="text-align:center;font-style:normal;"><a href="https://pin.it/2qaVnpDMj" target="_blank" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.25em;color:var(--gold);text-decoration:none;border:1px solid rgba(184,149,90,0.4);padding:0.5rem 1.2rem;display:inline-block;transition:background 0.2s;" onmouseover="this.style.background='rgba(184,149,90,0.1)'" onmouseout="this.style.background=''">▶ Ver ideas en Pinterest</a></p>
   </div>
 </section>
@@ -1821,7 +1820,7 @@
 
   <p class="rsvp-deadline reveal">Fecha límite de confirmación: <strong style="color:var(--burgundy);">05 de octubre de 2026</strong></p>
 
-  <div id="rsvp-thanks" style="display:none;margin-top:2rem;" class="reveal">
+  <div id="rsvp-thanks" style="display:none;margin-top:2rem;opacity:1;">
     <div class="ornament-divider">
       <div class="line"></div>
       <div class="diamond"></div>
@@ -1894,44 +1893,47 @@
 
   function submitRSVP(e) {
     e.preventDefault();
-    const form   = document.getElementById('rsvpForm');
-    const btn    = form.querySelector('.rsvp-btn');
-    const thanks = document.getElementById('rsvp-thanks');
 
-    // Collect data
-    const data = {
-      nombre:     document.getElementById('rsvp-nombre').value,
-      whatsapp:   document.getElementById('rsvp-whatsapp').value,
-      asistentes: document.getElementById('rsvp-asistentes').value,
+    var form    = document.getElementById('rsvpForm');
+    var btn     = form.querySelector('.rsvp-btn');
+    var thanks  = document.getElementById('rsvp-thanks');
+    var deadline = document.querySelector('.rsvp-deadline');
+
+    // Validate nombre
+    var nombre = document.getElementById('rsvp-nombre').value.trim();
+    if (!nombre) { alert('Por favor ingresa tu nombre.'); return; }
+
+    var data = {
+      nombre:    nombre,
+      whatsapp:  document.getElementById('rsvp-whatsapp').value.trim(),
       afterparty: document.getElementById('rsvp-afterparty').value,
-      notas:      document.getElementById('rsvp-notas').value
+      notas:     document.getElementById('rsvp-notas').value.trim()
     };
 
-    // Show loading state
     btn.textContent = 'Enviando...';
     btn.disabled = true;
 
-    // Send to Google Sheets
-    fetch('https://script.google.com/macros/s/AKfycbwjOptoMa5baPgFFqBO7LczxKyCs1WXgog6C0ujSprA2M0YvtNT-oabCm69Hjs1u3kX/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .then(function() {
+    // Use XMLHttpRequest for better compatibility
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://script.google.com/macros/s/AKfycbwjOptoMa5baPgFFqBO7LczxKyCs1WXgog6C0ujSprA2M0YvtNT-oabCm69Hjs1u3kX/exec', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    function showThanks() {
       form.style.display = 'none';
-      document.querySelector('.rsvp-deadline').style.display = 'none';
-      thanks.style.display = 'block';
-      thanks.classList.add('visible');
-    })
-    .catch(function(err) {
-      console.error('Error:', err);
-      // Show thanks anyway (no-cors doesn't return errors)
-      form.style.display = 'none';
-      document.querySelector('.rsvp-deadline').style.display = 'none';
-      thanks.style.display = 'block';
-      thanks.classList.add('visible');
-    });
+      if (deadline) deadline.style.display = 'none';
+      thanks.style.cssText = 'display:block !important; opacity:1 !important; margin-top:2rem;';
+    }
+
+    xhr.onload = function() { showThanks(); };
+    xhr.onerror = function() { showThanks(); }; // show anyway
+    xhr.ontimeout = function() { showThanks(); };
+    xhr.timeout = 8000;
+
+    try {
+      xhr.send(JSON.stringify(data));
+    } catch(err) {
+      showThanks();
+    }
   }
 
   // Countdown
