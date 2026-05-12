@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -1820,7 +1821,7 @@
 
   <p class="rsvp-deadline reveal">Fecha límite de confirmación: <strong style="color:var(--burgundy);">05 de octubre de 2026</strong></p>
 
-  <div id="rsvp-thanks" style="display:none;margin-top:2rem;opacity:1;">
+  <div id="rsvp-thanks" style="display:none;margin-top:2rem;" class="reveal">
     <div class="ornament-divider">
       <div class="line"></div>
       <div class="diamond"></div>
@@ -1901,6 +1902,7 @@
     const data = {
       nombre:     document.getElementById('rsvp-nombre').value,
       whatsapp:   document.getElementById('rsvp-whatsapp').value,
+      asistentes: document.getElementById('rsvp-asistentes').value,
       afterparty: document.getElementById('rsvp-afterparty').value,
       notas:      document.getElementById('rsvp-notas').value
     };
